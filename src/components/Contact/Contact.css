@@ -47,7 +47,7 @@ input {
 }
 input:last-of-type {
   width: 35%;
-  margin-left: auto;
+  /* margin-left: auto; */
   color: #884A4A;
   letter-spacing: 4px;
 }

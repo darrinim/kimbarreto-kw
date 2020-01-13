@@ -5,6 +5,7 @@ import Header from './components/header/Header';
 import LandingHero from './components/LandingHero/LandingHero';
 import About from './components/About/About';
 import Contact from './components/Contact/Contact';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <LandingHero />
       <About />
       <Contact />
+      <Footer />
     </div>
   );
 }
