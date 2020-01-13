@@ -1,5 +1,8 @@
   @import url('https://fonts.googleapis.com/css?family=Adamina|Muli:300,400,500,600&display=swap');
-  
+
 .App {
   text-align: center;
+}
+* {
+  box-sizing: border-box;
 }
