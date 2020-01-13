@@ -31,7 +31,7 @@
     display: flex;
     width: 85%;
     margin: 10% auto;
-    border: 1px solid red;
+    /* border: 1px solid red; */
   }
   .aboutImg {
     width: 90%;

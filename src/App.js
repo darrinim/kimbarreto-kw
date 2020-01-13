@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Header from './components/header/Header';
 import LandingHero from './components/LandingHero/LandingHero';
 import About from './components/About/About';
+import Contact from './components/Contact/Contact';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Header />
       <LandingHero />
       <About />
+      <Contact />
     </div>
   );
 }
