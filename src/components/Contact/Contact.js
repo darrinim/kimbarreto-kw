@@ -30,7 +30,8 @@ const Contact = () => {
           <form>
             <input type="text" placeholder="Name"></input>
             <input type="text" placeholder="Email"></input>
-            <input type="text" placeholder="What's on your mind?"></input>
+            {/* <input type="text" placeholder="What's on your mind?"></input> */}
+            <textarea rows="2" cols="45" placeholder="This is the default text"></textarea>
             <input type="submit" value="Send"></input>
           </form>
         </div>
