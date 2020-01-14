@@ -1,7 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Contact.css'
 
 const Contact = () => {
+
+  const [ name, setName ] = useState('');
+  const [ email, setEmail ] = useState('');
+  const [ message, setMessage ] = useState('');
+  const nameChange = e => setName(e.target.value);
+  const emailChange = e => setEmail(e.target.value);
+  const messageChange = e => setMessage(e.target.value);
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    // console.log('YOOOOOOOOOOOOOO');
+    // alert(`Submitting ${name}, ${email}, ${message}`)
+  }
 
   return(
     <div className="contactContainer">
@@ -27,11 +40,10 @@ const Contact = () => {
             </div>
         </div>
         <div className="contactFormWrap">
-          <form>
-            <input type="text" placeholder="Name"></input>
-            <input type="text" placeholder="Email"></input>
-            {/* <input type="text" placeholder="What's on your mind?"></input> */}
-            <textarea rows="2" cols="45" placeholder="This is the default text"></textarea>
+          <form onSubmit={handleSubmit}>
+            <input type="text" placeholder="Name" onChange={nameChange}></input>
+            <input type="text" placeholder="Email" onChange={emailChange}></input>
+            <textarea placeholder="What's on your mind?" onChange={messageChange}></textarea>
             <input type="submit" value="Send"></input>
           </form>
         </div>
