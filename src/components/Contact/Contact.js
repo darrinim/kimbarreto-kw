@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Contact.css'
+import axios from 'axios';
 
 const Contact = () => {
 
@@ -10,11 +11,22 @@ const Contact = () => {
   const emailChange = e => setEmail(e.target.value);
   const messageChange = e => setMessage(e.target.value);
 
-  const handleSubmit = e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // console.log('YOOOOOOOOOOOOOO');
     // alert(`Submitting ${name}, ${email}, ${message}`)
+    // console.log(name, email, message);
+    const response = await axios.post("http://localhost:3002/send",{name, email, message})
+    if (response.data.status === 'success'){
+      alert("Message Sent.");
+      setName('');
+      setEmail('');
+      setMessage('');
+    } else if(response.data.status === 'fail'){
+      alert("Message failed to send.")
+    }
   }
+
 
   return(
     <div className="contactContainer">
@@ -22,7 +34,7 @@ const Contact = () => {
         <div className="contactInfoWrap">
           <h2>Contact</h2>
             <div>
-              <span><i class="fas fa-map-marker-alt icon"></i></span>
+              <span><i className="fas fa-map-marker-alt icon"></i></span>
               <span>
                 <a
                   target="blank"
@@ -31,19 +43,19 @@ const Contact = () => {
               </span>
             </div>
             <div>
-              <span><i class="fas fa-phone-alt icon"></i></span>
+              <span><i className="fas fa-phone-alt icon"></i></span>
               <span><a target="blank" href="tel:2015938900">Office: (201) 592-8900</a></span>
             </div>
             <div>
-              <span><i class="fas fa-envelope icon"></i></span>
+              <span><i className="fas fa-envelope icon"></i></span>
               <span><a target="blank" href="mailto:info@kimberlybarreto.com">info@kimberlybarreto.com</a></span>
             </div>
         </div>
         <div className="contactFormWrap">
-          <form onSubmit={handleSubmit}>
-            <input type="text" placeholder="Name" onChange={nameChange}></input>
-            <input type="text" placeholder="Email" onChange={emailChange}></input>
-            <textarea placeholder="What's on your mind?" onChange={messageChange}></textarea>
+          <form onSubmit={handleSubmit} method="POST" action="/send">
+            <input type="text" placeholder="Name" onChange={nameChange} value={name}></input>
+            <input type="text" placeholder="Email" onChange={emailChange} value={email}></input>
+            <textarea placeholder="What's on your mind?" onChange={messageChange} value={message}></textarea>
             <input type="submit" value="Send"></input>
           </form>
         </div>
