@@ -6,8 +6,8 @@ const Header = () => {
   return(
     <div className="headerContainer">
       <div className="headerInnerWrap">
-        <h1>Kimberly Barreto</h1>
-        <ul>
+        <h1 className="animated fadeInLeft delay-1s">Kimberly Barreto</h1>
+        <ul className="animated fadeIn slow">
           <li>Contact</li>
           <li>About</li>
           <li>FAQ</li>

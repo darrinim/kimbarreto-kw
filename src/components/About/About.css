@@ -1,9 +1,9 @@
 .aboutContainer {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 100%;
 }
 .aboutInnerWrapMob {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 85%;
   margin: 0 auto;
   display: flex;
@@ -23,9 +23,10 @@
 .aboutInnerWrapDesk {
   display: none;
 }
+
 @media (min-width: 1024px) {
   .aboutContainer {
-    border: 1px solid green;
+    /* border: 1px solid green; */
   }
   .aboutInnerWrapDesk {
     display: flex;

@@ -4,7 +4,7 @@ import './LandingHero.css'
 const LandingHero = () => {
 
   return(
-    <div className="landingHeroContainer">
+    <div className="landingHeroContainer animated fadeIn fast">
       <img className="landingHeroImage" src="https://res.cloudinary.com/darrin-im/image/upload/v1578936272/real-estate-landing_copy_ypt9qg.jpg" />
     </div>
   )
