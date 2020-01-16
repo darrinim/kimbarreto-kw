@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Contact.css'
+import './Contact.css';
 import axios from 'axios';
 
 const Contact = () => {
@@ -10,6 +10,7 @@ const Contact = () => {
   const nameChange = e => setName(e.target.value);
   const emailChange = e => setEmail(e.target.value);
   const messageChange = e => setMessage(e.target.value);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
