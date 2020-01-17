@@ -35,17 +35,20 @@ const ClientTestimonials = () => {
 
   return(
     <div className="reviewContainer">
-      {reviews.map(review => {
-        return(
-          <div className="reviewOuterWrap">
-            <div className="reviewInnerWrap">
-              <img src="https://res.cloudinary.com/darrin-im/image/upload/v1579232004/quotes_wx7yqv.png" />
-              <p>{review.description}</p>
-              <p>-{review.reviewer}</p>
+    <h2>Client Testimonials</h2>
+      <div className="reviewInnerWrap">
+        {reviews.map(review => {
+          return(
+            <div className="reviewTile">
+              <div className="reviewTileWrap">
+                <img src="https://res.cloudinary.com/darrin-im/image/upload/v1579232004/quotes_wx7yqv.png" />
+                <p>{review.description}</p>
+                <p>-{review.reviewer.toUpperCase()}</p>
+              </div>
             </div>
-          </div>
-        )
-      })}
+          )
+        })}
+      </div>
     </div>
   )
 }
