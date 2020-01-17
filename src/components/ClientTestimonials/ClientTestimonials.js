@@ -35,13 +35,13 @@ const ClientTestimonials = () => {
 
   return(
     <div className="reviewContainer">
-    <h2>Client Testimonials</h2>
+      <h2>Client Testimonials</h2>
       <div className="reviewInnerWrap">
         {reviews.map(review => {
           return(
             <div className="reviewTile">
               <div className="reviewTileWrap">
-                <img src="https://res.cloudinary.com/darrin-im/image/upload/v1579232004/quotes_wx7yqv.png" />
+                <img src="https://res.cloudinary.com/darrin-im/image/upload/v1579282973/quotescolored_omtdbt.png" />
                 <p>{review.description}</p>
                 <p>-{review.reviewer.toUpperCase()}</p>
               </div>

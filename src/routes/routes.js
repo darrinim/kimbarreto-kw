@@ -6,6 +6,7 @@ import About from '../components/About/About';
 import Contact from '../components/Contact/Contact';
 import Footer from '../components/Footer/Footer';
 import ClientTestimonials from '../components/ClientTestimonials/ClientTestimonials';
+import Faq from '../components/FAQ/Faq';
 
 function Routes() {
   return (
@@ -24,6 +25,12 @@ function Routes() {
             <Route exact path='/about' render={() => (
               <>
                 <About />
+              </>
+            )} />
+
+            <Route exact path='/FAQ' render={() => (
+              <>
+                <Faq />
               </>
             )} />
 
