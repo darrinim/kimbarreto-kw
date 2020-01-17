@@ -6,13 +6,14 @@ const ClientTestimonials = () => {
 
   const [ reviews, setReview ] = useState([]);
 
+  // BELOW WORKS, JUST THE OTHER WAY USING FETCH/PROMISES INSTEAD OF ASYNC/AWAIT
   // useEffect(() => {
   //   fetch('http://www.zillow.com/webservice/ProReviews.htm?zws-id=X1-ZWz17fzq7msjrf_7j3qs&output=json&screenname=ROBfortheJOB&count=10')
-  //   .then(response => response.json())
+  //   .then(response => response.json()) // gets initial response
   //   .then(reviews => {
   //     setReview(reviews.response.results.proReviews.review)
   //     console.log('inside useEffect', reviews.response.results.proReviews.review)})
-  // }, [])
+  // }, []) // after getting the response, we then are able to use that data and update state
 
   // empty array reps the dependencies for useEffect hook
   // if something in that array changes, that function will run again
@@ -20,17 +21,9 @@ const ClientTestimonials = () => {
     // empty array indicates that it only needs to run once (like componentdidmount)
     // look into componentdidUpdate
 
-    // useEffect(async () => {
-    //   const response = await fetch('http://www.zillow.com/webservice/ProReviews.htm?zws-id=X1-ZWz17fzq7msjrf_7j3qs&output=json&screenname=ROBfortheJOB&count=10')
-    //   const reviews = await response.json()
-    //     setReview(reviews.response.results.proReviews.review)
-    //     console.log('inside useEffect', reviews.response.results.proReviews.review)
-    // }, [])
-    //the above gives warning, look at it
-
     useEffect(() => {
       async function getReviews () {
-        const response = await fetch('http://www.zillow.com/webservice/ProReviews.htm?zws-id=X1-ZWz17fzq7msjrf_7j3qs&output=json&screenname=ROBfortheJOB&count=10')
+        const response = await fetch('http://www.zillow.com/webservice/ProReviews.htm?zws-id=X1-ZWz17fzq7msjrf_7j3qs&output=json&screenname=ROBfortheJOB')
         const reviews = await response.json()
         setReview(reviews.response.results.proReviews.review)
         console.log('inside useEffect', reviews.response.results.proReviews.review)
@@ -38,26 +31,19 @@ const ClientTestimonials = () => {
       getReviews();
     }, [])
 
-//   const getReviews = async () => {
-//     const response = await axios.get('http://www.zillow.com/webservice/ProReviews.htm?zws-id=X1-ZWz17fzq7msjrf_7j3qs&output=json&screenname=ROBfortheJOB&count=10')
-//     .then((response) => {
-//       let review = response.data.response.results.proReviews.review;
-//       console.log('in getReviews', review);
-//       setReview(review)
-//   });
-// }
-// getReviews();
-
-//need && somewhere, but where
-//possibly need to put function call in componentdidmount
-
-// getReviews();
+// http://www.zillow.com/webservice/ProReviews.htm?zws-id=X1-ZWz17fzq7msjrf_7j3qs&output=json&screenname=ROBfortheJOB&count=10
 
   return(
-    <div>
+    <div className="reviewContainer">
       {reviews.map(review => {
         return(
-          <p>{review.description}</p>
+          <div className="reviewOuterWrap">
+            <div className="reviewInnerWrap">
+              <img src="https://res.cloudinary.com/darrin-im/image/upload/v1579232004/quotes_wx7yqv.png" />
+              <p>{review.description}</p>
+              <p>-{review.reviewer}</p>
+            </div>
+          </div>
         )
       })}
     </div>
