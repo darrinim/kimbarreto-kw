@@ -1,0 +1,18 @@
+.reviewContainer {
+  display: flex;
+  height: 100%;
+  border: 1px solid red;
+}
+.reviewOuterWrap {
+  height: 100%;
+  width: 61%;
+  border: 1px solid green;
+}
+.reviewInnerWrap {
+  width: 50%;
+  margin: auto;
+  border: 1px solid black;
+}
+.reviewInnerWrap img {
+  width: 5%;
+}

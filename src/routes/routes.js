@@ -5,6 +5,7 @@ import LandingHero from '../components/LandingHero/LandingHero';
 import About from '../components/About/About';
 import Contact from '../components/Contact/Contact';
 import Footer from '../components/Footer/Footer';
+import ClientTestimonials from '../components/ClientTestimonials/ClientTestimonials';
 
 function Routes() {
   return (
@@ -16,6 +17,7 @@ function Routes() {
               <>
                 <LandingHero/>
                 <About />
+                <ClientTestimonials />
               </>
             )} />
 
