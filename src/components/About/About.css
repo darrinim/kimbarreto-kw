@@ -12,8 +12,8 @@
 }
 .aboutImg {
   width: 75%;
-  border-radius: 50%;
-  border: 1px solid;
+  /* border-radius: 50%; */
+  /* border: 1px solid; */
   margin: 0 auto;
 }
 .aboutInnerWrapMob > p {

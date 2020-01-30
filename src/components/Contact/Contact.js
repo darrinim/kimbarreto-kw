@@ -45,7 +45,7 @@ const Contact = () => {
             </div>
             <div>
               <span><i className="fas fa-phone-alt icon"></i></span>
-              <span><a target="blank" href="tel:2015938900">Office: (201) 592-8900</a></span>
+              <span><a target="blank" href="tel:2015938900">Cell: (973) 592-8113</a></span>
             </div>
             <div>
               <span><i className="fas fa-envelope icon"></i></span>
