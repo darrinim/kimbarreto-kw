@@ -1,0 +1,62 @@
+.saleOuterContainer {
+  padding: 5% 0 10% 0;
+  background-color: white;
+}
+.saleOuterContainer h2 {
+  font-size: calc(30px + (40 - 30) * ((100vw - 300px) / (1600 - 300)));
+  margin-bottom: 7%;
+  font-family: 'Adamina';
+  font-weight: lighter;
+}
+.saleOuterContainer h2::after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  border-bottom: 3px solid #884A4A;
+  width: 25%;
+  min-width: 300px;
+  padding-top: 5px;
+  /* border: 1px solid black; */
+}
+.saleContainer {
+  width: 70%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 5px;
+}
+.saleImage {
+  width: 100%;
+}
+.saleTile {
+  position: relative;
+}
+.saleText {
+  margin: 0;
+}
+.saleInnerTile {
+  background: rgba(255,255,255,.8);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 5px;
+}
+@media(max-width: 425px) {
+  .saleContainer {
+    width: 85%;
+  }
+  .saleOuterContainer h2 {
+    margin-bottom: 9%;
+  }
+}
+@media(max-width: 375px) {
+  .saleContainer {
+    width: 100%;
+  }
+}
+@media(max-width: 320px) {
+  .saleOuterContainer h2::after {
+    min-width: 0;
+    width: 80%;
+  }
+}
