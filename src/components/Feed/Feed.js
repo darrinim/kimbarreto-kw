@@ -5,10 +5,13 @@ const Feed = () => {
 
   const [ sales, setSales ] = useState([]);
 
+  const API_KEY = `${process.env.REACT_APP_API_KEY_GSHEETS}`;
+  
+
   useEffect(() => {
     async function getSales () {
-      let id = '1-RbZLYCY6NNbHB5IJzLSezQ83y6xH5iUAKOnqyCVndM'
-      let source = await fetch(`https://spreadsheets.google.com/feeds/list/${id}/od6/public/values?alt=json`)
+      // let id = '1-RbZLYCY6NNbHB5IJzLSezQ83y6xH5iUAKOnqyCVndM'
+      let source = await fetch(`https://spreadsheets.google.com/feeds/list/${API_KEY}/od6/public/values?alt=json`)
       let salesArray = await source.json()
       console.log('inside useEffect Feed', salesArray.feed.entry);
       setSales(salesArray.feed.entry)
